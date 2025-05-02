@@ -15369,7 +15369,7 @@ html.maximized-card {
 }
 
 i{
-  float: right;
+  /* float: right; */
   padding: 5px;
   cursor: pointer;
 }

@@ -1,25 +1,25 @@
-// const modalEliminar = document.getElementById("eliminarEstudianteModal");
-// let eliminarEstudiante;
+/* const modalEliminar = document.getElementById("eliminarEstudianteModal");
+ let eliminarEstudiante;
 
-// modalEliminar.addEventListener("show.bs.modal", (event) => {
-//   const button = event.relatedTarget;
-//   eliminarEstudiante = button.getAttribute("cedula");
+ modalEliminar.addEventListener("show.bs.modal", (event) => {
+   const button = event.relatedTarget;
+   eliminarEstudiante = button.getAttribute("cedula");
 
-// });
+ });
 
-// const botonEliminar = document.getElementById("eliminarEstudiante");
-// botonEliminar.addEventListener("click", () => {
-//     if(eliminarEstudiante){
-//         const filaEliminar = document.querySelector(`tr[cedula="${eliminarEstudiante}"]`);
-//         if(filaEliminar){
-//             filaEliminar.remove();
-//             const modalBootstrap = bootstrap.Modal.getInstance(modalEliminar);
-//             modalBootstrap.hide();
-//         }
-//         eliminarEstudiante = null;
-//     }
+ const botonEliminar = document.getElementById("eliminarEstudiante");
+ botonEliminar.addEventListener("click", () => {
+     if(eliminarEstudiante){
+         const filaEliminar = document.querySelector(`tr[cedula="${eliminarEstudiante}"]`);
+         if(filaEliminar){
+             filaEliminar.remove();
+             const modalBootstrap = bootstrap.Modal.getInstance(modalEliminar);
+             modalBootstrap.hide();
+         }
+         eliminarEstudiante = null;
+     }
 
-// })
+ })
 
 const verUsuarioModal = document.getElementById("verUsuarioModal");
 
@@ -35,3 +35,4 @@ verUsuarioModal.addEventListener("show.bs.modal", (event) => {
     cedulaEstudianteModal.textContent = cedulaEstudiante;
 
 })
+*/
