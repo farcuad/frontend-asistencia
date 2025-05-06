@@ -94,13 +94,6 @@
         });
       });
 
-
- function verUsuario(numero) {
-    console.log(estudiantes[numero]);
-    console.error(estudiantes[numero]);
-    console.info(estudiantes[numero]);
- }
-
  const verUsuarioModal = document.getElementById("verUsuarioModal");
 
 verUsuarioModal.addEventListener("show.bs.modal", (event) => {
