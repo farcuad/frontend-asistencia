@@ -95,7 +95,7 @@
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="../pages/list.html" class="nav-link active">
+              <a href="../pages/listas-asistencias.html" class="nav-link active">
                 <p>
                   Lista de Asistencias
                 </p>
@@ -122,45 +122,10 @@
                 <th style="width: 10px">#</th>
                 <th>Fecha</th>
                 <th>Numero de Asistentes</th>
+                <th>Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="align-middle " data-estudiante-cedula="31204836" data-estudiante-nombre="Andres Calles">
-                <td>1.</td>
-                <td>02/05/2025</td>
-                <td>4
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verUsuarioModal"></i>
-                </td>
-
-              </tr>
-              <tr class="align-middle" data-estudiante-cedula="30321239" data-estudiante-nombre="Rafael Arocha">
-                <td>2.</td>
-                <td>26/04/2025</td>
-                <td>5
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verUsuarioModal"></i>
-                </td>
-              </tr>
-              <tr class="align-middle" data-estudiante-cedula="30740994" data-estudiante-nombre="Antony Guevara">
-                <td>3.</td>
-                <td>Antony Guevara</td>
-                <td>30.740.994
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verUsuarioModal"></i>
-                </td>
-              </tr>
-              <tr class="align-middle" data-estudiante-cedula="31598995" data-estudiante-nombre="Jonathan Leal">
-                <td>4.</td>
-                <td>Jonathan Leal</td>
-                <td>31.598.995
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verUsuarioModal"></i>
-                </td>
-              </tr>
-              <tr class="align-middle" data-estudiante-cedula="24114415" data-estudiante-nombre="David Reyes">
-                <td>5.</td>
-                <td>David Reyes</td>
-                <td>24.114.415
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verUsuarioModal" ></i>
-                </td>
-              </tr>
+            <tbody id="bodyAsistencias">  
             </tbody>
           </table>
         </div>
@@ -168,7 +133,7 @@
 
   </div>
 
-  <div class="modal fade" id="verUsuarioModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel" aria-hidden="true">
+  <div class="modal fade" id="verAsistenciaModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -176,8 +141,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p id="nombreEstudianteModal"></p>
-          <p id="cedulaEstudianteModal"></p>
+          <p id="estudiantes"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Listo</button>
@@ -197,7 +161,7 @@
     crossorigin="anonymous"></script>
   <!--end::Script-->
 
-  <script src="../../dist/js/adminlte.js"></script>
+  <script src="../../dist/js/listas-asistencias.js"></script>
 </body>
 <!--end::Body-->
 
