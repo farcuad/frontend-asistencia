@@ -53,7 +53,7 @@
           <!--begin::Navbar Search-->
           <li class="nav-item">
             <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
-              <i class="bi bi-list"></i>
+              <i id="iconoOcultar" class="bi bi-list"></i>
             </a>
           </li>
           
@@ -61,7 +61,7 @@
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
               <img src="../../dist/assets/img/img-andres.jpeg" class="user-image rounded-circle shadow"
                 alt="User Image" />
-              <span class="d-none d-md-inline">Andres Calles</span>
+              <span class="d-none d-md-inline">Lindolfo Torres</span>
             </a>
           </li>
           <!--end::User Menu Dropdown-->
@@ -72,7 +72,7 @@
     </nav>
     <!--end::Header-->
     <!--begin::Sidebar-->
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark" id="aside">
       <!--begin::Sidebar Brand-->
       <div class="sidebar-brand">
         <!--begin::Brand Link-->
@@ -102,6 +102,20 @@
                 </p>
               </a>
             </li>
+            <!-- <li class="nav-item menu-open">
+              <a class="nav-link active">
+                <p>
+                  Lista de Profesores
+                </p>
+              </a>
+            </li>
+            <li class="nav-item menu-open">
+              <a class="nav-link active">
+                <p>
+                  Lista de subproyectos
+                </p>
+              </a>
+            </li> -->
           </ul>
           <!--end::Sidebar Menu-->
         </nav>
@@ -193,6 +207,7 @@
 
   <script src="../../dist/js/adminlte.js"></script>
   <script src="../../dist/js/estudiantes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <!--end::Body-->
 

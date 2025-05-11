@@ -64,7 +64,6 @@ window.addEventListener("load", () => {
                  data-estudiante-telefono="${estudiante.telefono}"
                  data-estudiante-correo="${estudiante.correo}"
                  data-estudiante-imagen="${estudiante.imagen}"></i>
-              <i class="fa-solid fa-pen-to-square"></i>
               <i class="fa-solid fa-trash-can btn-eliminar" data-estudiante-cedula="${estudiante.cedula}">
               </i>
             </td>
@@ -74,7 +73,24 @@ window.addEventListener("load", () => {
   bodyEstudiantes.addEventListener("click", (event)=>{
     if (event.target.classList.contains("btn-eliminar")) {
       const cedulaEliminar = event.target.getAttribute("data-estudiante-cedula");
-      eliminarFila(cedulaEliminar);
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "No podrás revertir esta acción.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Si el usuario confirma, eliminar la fila
+          eliminarFila(cedulaEliminar);
+  
+          // Mostrar mensaje de éxito
+          Swal.fire("Eliminado", "El estudiante ha sido eliminado.", "success");
+        }
+      });
     }
   })
 });
@@ -113,6 +129,14 @@ verUsuarioModal.addEventListener("show.bs.modal", (event) => {
   telefonoEstudianteModal.textContent = telefonoEstudiante;
   correoEstudianteModal.textContent = correoEstudiante;
   imagenEstudianteModal.src = imagenEstudiante;
+});
+
+
+const iconoOcultar = document.getElementById("iconoOcultar");
+const aside = document.querySelector("aside");
+
+iconoOcultar.addEventListener("click", () => {
+  aside.classList.toggle("oculto");
 });
 
 

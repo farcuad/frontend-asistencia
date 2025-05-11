@@ -790,10 +790,10 @@ progress {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  flex-direction: column;
 }
 .row > * {
   flex-shrink: 0;
@@ -865,8 +865,7 @@ progress {
 }
 
 .col-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
+  padding: 8px 120px;
 }
 
 .col-5 {
@@ -14262,7 +14261,7 @@ body:not(.app-loaded) .app-footer {
   --bs-btn-hover-color: var(--lte-card-variant-color);
 }
 .card.card-outline {
-  border-top: 3px solid var(--lte-card-variant-bg);
+  border-top: 3px solid #f39c12;
 }
 .card.maximized-card {
   position: fixed;
@@ -15368,37 +15367,8 @@ html.maximized-card {
   width: 32px;
 }
 
-i{
-  /* float: right; */
-  padding: 5px;
-  cursor: pointer;
-}
-
-.fa-trash-can{
-  color: red;
-}
-
-.fa-trash-can:hover{
-  color: #842029;
-}
-
-.fa-pen-to-square{
-  color: orange;
-}
-
-.fa-pen-to-square:hover{
-  color: #ff7f00;
-}
 .fa-eye{
-  color: green;
-}
-
-.fa-eye:hover{
-  color: #006400;
-}
-
-.oculto{
-  display: none;
+  cursor: pointer;
 }
 
 

@@ -46,29 +46,9 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
   const estudiantes = btnVer.getAttribute("data-estudiantes");
 
   const estudianteModal = document.getElementById("estudiantes");
-/* 
-  const estudiante = []
-  estudiantes.forEach((cedula)=>{
-    estudiante.push(
-    `
-            <li>${cedula}</li>
-  `) 
 
-  })*/
 
   estudianteModal.textContent = estudiantes;
 
- /*  const div = document.createElement("div");
-
-  div.innerHTML = `
-            <ul>
-            <li></li>
-            </ul>
-  ` */
-
-  function list(estudiantes) {
-    console.log(estudiantes);
-    
-  }
 })
 
