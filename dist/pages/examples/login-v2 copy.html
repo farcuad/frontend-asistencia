@@ -42,7 +42,7 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
+    <link rel="stylesheet" href="../../../dist/css/login-v2.css" />
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -73,7 +73,9 @@
                 <input id="loginPassword" type="password" class="form-control" placeholder="" />
                 <label for="loginPassword">Contraseña</label>
               </div>
-              <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+              <div class="input-group-text">
+                <i id="eye" class="fa-solid fa-eye"></i>
+              </div>
             </div>
             <!--begin::Row-->
             <div class="row">
@@ -94,7 +96,6 @@
             <!--end::Row-->
           </form>
           <div class="social-auth-links text-center mb-3 d-grid gap-2">
-            <p>- O -</p>
             <a href="#" class="btn btn-danger">
               <i class="bi bi-google me-2"></i> Iniciar Sesión con Google
             </a>
@@ -109,6 +110,9 @@
       </div>
     </div>
     <!-- /.login-box -->
+    
+    <!-- icons-fontaxesome -->
+    <script src="https://kit.fontawesome.com/f919b01a4f.js" crossorigin="anonymous"></script>
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
@@ -128,7 +132,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="../../../dist/js/adminlte.js"></script>
+    <script src="../../../dist/js/login.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
