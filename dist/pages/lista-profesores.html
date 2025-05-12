@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Lista de asistencias</title>
+  <title>Lista de Profesores </title>
   <!--begin::Primary Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="AdminLTE v4 | Dashboard" />
@@ -104,7 +104,7 @@
       <div class="sidebar-brand">
         <!--begin::Brand Link-->
         <a href="./index.html" class="brand-link">
-          <span class="brand-text fw-light">Lista de Asistencias</span>
+          <span class="brand-text fw-light">Lista de Profesores</span>
           <!--end::Brand Text-->
         </a>
         <!--end::Brand Link-->
@@ -131,10 +131,10 @@
                 </p>
               </a>
             </li>
-                        <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                
-                  <i class="nav-icon bi bi-speedometer"></i>
+            <li class="nav-item menu-open">
+              <a href="../pages/lista-profesores.html" class="nav-link active">
+
+                <i class="nav-icon bi bi-speedometer"></i>
                 <p>
                   Lista de Profesores
                 </p>
@@ -142,8 +142,8 @@
             </li>
             <li class="nav-item menu-open">
               <a href="#" class="nav-link active">
-                
-                  <i class="nav-icon bi bi-speedometer"></i>
+
+                <i class="nav-icon bi bi-speedometer"></i>
                 <p>
                   Lista de Subproyectos
                 </p>
@@ -160,7 +160,7 @@
     <main class="app-main ">
       <div class="card m-4">
         <div class="card-header">
-          <h3 class="card-title">Lista de Asistencias</h3>
+          <h3 class="card-title">Lista de Profesores</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -168,12 +168,12 @@
             <thead>
               <tr>
                 <th style="width: 10px">#</th>
-                <th>Fecha</th>
-                <th>Numero de Asistentes</th>
+                <th>Nombre y Apellido</th>
+                <th>Cedulas</th>
                 <th>Acciones</th>
               </tr>
             </thead>
-            <tbody id="bodyAsistencias">
+            <tbody id="bodyProfesores">
             </tbody>
           </table>
         </div>
@@ -181,7 +181,7 @@
 
   </div>
 
-  <div class="modal fade" id="verAsistenciaModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel"
+  <div class="modal fade" id="verProfesoresModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -190,7 +190,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p id="estudiantes"></p>
+          <div class="texte-center">
+            <img src="" id="imagenProfesorModal" class=" rounded" width="100">
+          </div>
+          <p>Nombre: <span id="nombreProfesorModal"></span></p>
+          <p>Cedula: <span id="cedulaProfesorModal"></span></p>
+          <p>Correo: <span id="correoProfesorModal"></span></p>
+          <p>Telefono: <span id="telefonoProfesorModal"></span></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Listo</button>
@@ -201,7 +207,7 @@
 
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -210,7 +216,7 @@
     crossorigin="anonymous"></script>
   <!--end::Script-->
 
-  <script src="../../dist/js/listas-asistencias.js"></script>
+  <script src="../../dist/js/lista-profesores.js"></script>
 </body>
 <!--end::Body-->
 

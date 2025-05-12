@@ -6879,7 +6879,7 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #fff !important;
-  background-color: RGBA(var(--bs-primary-rgb), var(--bs-bg-opacity, 1)) !important;
+  background-color: #f39c12;
 }
 
 .text-bg-secondary {
@@ -15395,10 +15395,6 @@ i{
 
 .fa-eye:hover{
   color: #006400;
-}
-
-.oculto{
-  display: none;
 }
 
 
