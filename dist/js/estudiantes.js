@@ -1,56 +1,31 @@
-let estudiantes = [
-  {
-    cedula: "24114415",
-    nombre: "David Reyes",
-    carrera: "Ingenieria informatica",
-    semestre: "5",
-    telefono: "31.204.836",
-    correo: "O8g4P@example.com",
-    imagen: "https://images.pexels.com/photos/220451/pexels-photo-220451.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    cedula: "30321239",
-    nombre: "Rafael Arocha",
-    carrera: "Ingenieria informatica",
-    semestre: "5",
-    telefono: "31.204.836",
-    correo: "O8g4P@example.com",
-    imagen: "https://images.pexels.com/photos/220452/pexels-photo-220452.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    cedula: "31204836",
-    nombre: "Andres Calles",
-    carrera: "Ingenieria informatica",
-    semestre: "5",
-    telefono: "04127575904",
-    correo: "O8g4P@example.com",
-    imagen: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    cedula: "30740994",
-    nombre: "Antony Guevara",
-    carrera: "Ingenieria informatica",
-    semestre: "5",
-    telefono: "31204836",
-    correo: "O8g4P@example.com",
-    imagen: "https://images.pexels.com/photos/220454/pexels-photo-220454.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    cedula: "31598995",
-    nombre: "Jonathan Leal",
-    carrera: "Ingenieria informatica",
-    semestre: "5",
-    telefono: "31204836",
-    correo: "O8g4P@example.com",
-    imagen: "https://images.pexels.com/photos/220455/pexels-photo-220455.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-];
+let estudiantes = [];
 
 window.addEventListener("load", () => {
-  const bodyEstudiantes= document.getElementById("bodyEstudiantes")
-  estudiantes.forEach((estudiante, index) => {
-    const fila = document.createElement("tr");
-    fila.innerHTML = `
+  fetch("https://api-springboot-hdye.onrender.com/status")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error en la solicitud: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then((status) => {
+      console.log(status); // Procesar los datos recibidos
+      // Aquí puedes manipular los datos, por ejemplo, mostrarlos en una tabla
+      fetch("https://api-springboot-hdye.onrender.com/estudiantes")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status}`);
+          }
+          return response.json(); // Convertir la respuesta a JSON
+        })
+        .then((data) => {
+          console.log("Datos recibidos:", data); // Procesar los datos recibidos
+          // Aquí puedes manipular los datos, por ejemplo, mostrarlos en una tabla
+          estudiantes = data;
+          const bodyEstudiantes = document.getElementById("bodyEstudiantes")
+          estudiantes.forEach((estudiante, index) => {
+            const fila = document.createElement("tr");
+            fila.innerHTML = `
             <td>${index + 1}</td>
             <td>${estudiante.nombre}</td>
             <td>${estudiante.cedula}</td>
@@ -68,9 +43,21 @@ window.addEventListener("load", () => {
               </i>
             </td>
           `;
-    bodyEstudiantes.appendChild(fila);
-  });
-  bodyEstudiantes.addEventListener("click", (event)=>{
+            bodyEstudiantes.appendChild(fila);
+          });
+        })
+        .catch((error) => {
+          console.error("Error al realizar la solicitud:", error);
+        });
+    })
+    .catch((error) => {
+      console.error("El servicio no está en linea:", error);
+    });
+
+
+
+
+  bodyEstudiantes.addEventListener("click", (event) => {
     if (event.target.classList.contains("btn-eliminar")) {
       const cedulaEliminar = event.target.getAttribute("data-estudiante-cedula");
       Swal.fire({
@@ -86,7 +73,7 @@ window.addEventListener("load", () => {
         if (result.isConfirmed) {
           // Si el usuario confirma, eliminar la fila
           eliminarFila(cedulaEliminar);
-  
+
           // Mostrar mensaje de éxito
           Swal.fire("Eliminado", "El estudiante ha sido eliminado.", "success");
         }
@@ -95,12 +82,12 @@ window.addEventListener("load", () => {
   })
 });
 
-  function eliminarFila(cedula){
-    const filaEliminar = document.querySelector(`tr td .btn-eliminar[data-estudiante-cedula='${cedula}']`).closest("tr");
-    if (filaEliminar) {
-      filaEliminar.remove();
-    }
+function eliminarFila(cedula) {
+  const filaEliminar = document.querySelector(`tr td .btn-eliminar[data-estudiante-cedula='${cedula}']`).closest("tr");
+  if (filaEliminar) {
+    filaEliminar.remove();
   }
+}
 
 const verUsuarioModal = document.getElementById("verUsuarioModal");
 
@@ -132,12 +119,7 @@ verUsuarioModal.addEventListener("show.bs.modal", (event) => {
 });
 
 
-const iconoOcultar = document.getElementById("iconoOcultar");
-const aside = document.querySelector("aside");
 
-iconoOcultar.addEventListener("click", () => {
-  aside.classList.toggle("oculto");
-});
 
 
 
