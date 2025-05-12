@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Lista de estudiantes</title>
+  <title>Lista de Subproyectos</title>
   <!--begin::Primary Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="AdminLTE v4 | Dashboard" />
@@ -14,8 +14,6 @@
   <meta name="keywords"
     content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard" />
   <!--end::Primary Meta Tags-->
-  <!--begin::Favicon-->
-  <link rel="icon" type="image/png" href="../../dist/assets/img/logo.png" />
   <!--begin::Fonts-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
     integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous" />
@@ -40,25 +38,11 @@
   <!-- jsvectormap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
     integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../../dist/css/custom-styles.css" />
 </head>
 <!--end::Head-->
 <!--begin::Body-->
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-  <!-- Preloader -->
-  <div id="preloader" class="preloader">
-    <div class="d-flex flex-column justify-content-center align-items-center h-100">
-      <!-- <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-            <span class="visually-hidden">Cargando...</span>
-        </div> -->
-      <img id="cloud-img" src="../../dist/assets/img/cloud.gif" alt="Cargando" width="200" class="preloader-img" />
-      <p id="loading-text" class="mt-3">Cargando...</p>
-      <p id="delay-message" class="text-muted mt-2" style="opacity:0;">
-        <i class="bi bi-info-circle"></i> Espere mientras se levanta el servidor, esto puede tardar hasta 50 segundos.
-      </p>
-    </div>
-  </div>
   <!--begin::App Wrapper-->
   <div class="app-wrapper">
     <!--begin::Header-->
@@ -66,11 +50,13 @@
       <!--begin::Container-->
       <div class="container-fluid">
         <ul class="navbar-nav">
+          <!--begin::Navbar Search-->
           <li class="nav-item">
             <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
               <i class="bi bi-list"></i>
             </a>
           </li>
+          <!--end::User Menu Dropdown-->
         </ul>
         <ul class="navbar-nav ms-auto">
 
@@ -94,8 +80,8 @@
               <li class="user-header text-bg-primary">
                 <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image" />
                 <p>
-                  Lindolfo Torres
-                  <small>Asistente desde 17 de mayo de 2025</small>
+                  Linfolfo Torres
+                  <small>Asistente desde 17 de mayo de 2025 </small>
                 </p>
               </li>
               <!--end::User Image-->
@@ -103,26 +89,22 @@
               <!--end::Menu Body-->
               <!--begin::Menu Footer-->
               <li class="user-footer">
-                <a href="../../dist/pages/examples/login-v2 copy.html" class="btn btn-default btn-flat float-end">Cerrar
-                  Sesión</a>
+                <a href="../../dist/pages/examples/login-v2 copy.html" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
               </li>
               <!--end::Menu Footer-->
             </ul>
-          </li>
-          <!--end::User Menu Dropdown-->
-        </ul>
-        <!--end::End Navbar Links-->
+            <!--end::End Navbar Links-->
       </div>
       <!--end::Container-->
     </nav>
     <!--end::Header-->
     <!--begin::Sidebar-->
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark" id="aside">
+    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
       <!--begin::Sidebar Brand-->
       <div class="sidebar-brand">
         <!--begin::Brand Link-->
         <a href="./index.html" class="brand-link">
-          <span class="brand-text fw-light">Lista de estudiantes</span>
+          <span class="brand-text fw-light">Lista de Asistencias</span>
           <!--end::Brand Text-->
         </a>
         <!--end::Brand Link-->
@@ -134,8 +116,7 @@
           <!--begin::Sidebar Menu-->
           <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
             <li class="nav-item menu-open">
-              <a href="index.html" class="nav-link active">
-
+              <a href="../pages/index.html" class="nav-link active">
                 <i class="nav-icon bi bi-backpack3-fill"></i>
                 <p>
                   Estudiantes
@@ -143,8 +124,7 @@
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="listas-asistencias.html" class="nav-link active">
-
+              <a href="../pages/listas-asistencias.html" class="nav-link active">
                 <i class="nav-icon bi bi-card-checklist"></i>
                 <p>
                   Lista de Asistencias
@@ -152,7 +132,7 @@
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="lista-profesores.html" class="nav-link active">
+              <a href="../pages/lista-profesores.html" class="nav-link active">
 
                 <i class="nav-icon bi bi-speedometer"></i>
                 <p>
@@ -161,7 +141,7 @@
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="lista-subproyectos.html" class="nav-link active">
+              <a href="../pages/lista-subproyectos.html" class="nav-link active">
 
                 <i class="nav-icon bi bi-speedometer"></i>
                 <p>
@@ -180,7 +160,7 @@
     <main class="app-main ">
       <div class="card m-4">
         <div class="card-header">
-          <h3 class="card-title">Lista de estudiantes</h3>
+          <h3 class="card-title">Lista de Subproyectos</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -188,14 +168,10 @@
             <thead>
               <tr>
                 <th style="width: 10px">#</th>
-                <th>Nombre y Apellido</th>
-                <th>Cedula</th>
-                <th>Acciones</th>
+                <th>Subproyectos</th>
               </tr>
             </thead>
-            <tbody id="bodyEstudiantes">
-              <!-- Se crean las filas dinamicamente -->
-              </tr>
+            <tbody id="bodySubproyectos">
             </tbody>
           </table>
         </div>
@@ -203,53 +179,6 @@
 
   </div>
 
-  <div class="modal fade" id="verUsuarioModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="verUsuarioModalLabel">Datos del usuario</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="text-center">
-
-            <img src="" id="imagenEstudianteModal" class=" rounded" width="100" />
-          </div>
-          <p>Nombre: <span id="nombreEstudianteModal"></span></p>
-          <p>Cedula: <span id="cedulaEstudianteModal"></span></p>
-          <p>Correo: <span id="correoEstudianteModal"></span></p>
-          <p>Telefono: <span id="telefonoEstudianteModal"></span></p>
-          <p>Carrera: <span id="carreraEstudianteModal"></span></p>
-          <p>Semestre: <span id="semestreEstudianteModal"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Listo</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" aria-labelledby="eliminarUsuarioModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="eliminarUsuarioModalLabel">¿Estás seguro que quieres eliminar?</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Ésta acción no se puede deshacer, por favor asegurate antes de eliminar</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="eliminarEstudiante">Eliminar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
-    integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ=" crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -258,31 +187,8 @@
     integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
     crossorigin="anonymous"></script>
   <!--end::Script-->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="../../dist/js/adminlte.js"></script>
-  <script src="../../dist/js/estudiantes.js"></script>
-  <script>
-    const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
-    const Default = {
-      scrollbarTheme: 'os-theme-light',
-      scrollbarAutoHide: 'leave',
-      scrollbarClickScroll: true,
-    };
-    document.addEventListener('DOMContentLoaded', function () {
-      const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
-      if (sidebarWrapper && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
-        OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
-          scrollbars: {
-            theme: Default.scrollbarTheme,
-            autoHide: Default.scrollbarAutoHide,
-            clickScroll: Default.scrollbarClickScroll,
-          },
-        });
-      }
-    });
-  </script>
-  <!--end::OverlayScrollbars Configure-->
+  <script src="../../dist/js/lista-subproyectos.js"></script>
 </body>
 <!--end::Body-->
 

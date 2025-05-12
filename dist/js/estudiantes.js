@@ -1,31 +1,43 @@
 let estudiantes = [];
 
 window.addEventListener("load", () => {
+  const delayMessage = document.getElementById('delay-message');
+  let delayTimer;
+  // Mostrar mensaje después de 5 segundos si aún carga
+  delayTimer = setTimeout(() => {
+    delayMessage.style.opacity = '1';
+  }, 5000);
+  
   fetch("https://api-springboot-hdye.onrender.com/status")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Error en la solicitud: ${response.status}`);
       }
+      quitarPreloader();
       return response.text();
     })
     .then((status) => {
-      console.log(status); // Procesar los datos recibidos
+      console.log(status);
+
+    })
+    .catch((error) => {
+      console.error("El servicio no está en linea:", error);
+    });
+  fetch("https://api-springboot-hdye.onrender.com/estudiantes")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error en la solicitud: ${response.status}`);
+      }
+      return response.json(); // Convertir la respuesta a JSON
+    })
+    .then((data) => {
+      console.log("Datos recibidos:", data); // Procesar los datos recibidos
       // Aquí puedes manipular los datos, por ejemplo, mostrarlos en una tabla
-      fetch("https://api-springboot-hdye.onrender.com/estudiantes")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Error en la solicitud: ${response.status}`);
-          }
-          return response.json(); // Convertir la respuesta a JSON
-        })
-        .then((data) => {
-          console.log("Datos recibidos:", data); // Procesar los datos recibidos
-          // Aquí puedes manipular los datos, por ejemplo, mostrarlos en una tabla
-          estudiantes = data;
-          const bodyEstudiantes = document.getElementById("bodyEstudiantes")
-          estudiantes.forEach((estudiante, index) => {
-            const fila = document.createElement("tr");
-            fila.innerHTML = `
+      estudiantes = data;
+      const bodyEstudiantes = document.getElementById("bodyEstudiantes")
+      estudiantes.forEach((estudiante, index) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
             <td>${index + 1}</td>
             <td>${estudiante.nombre}</td>
             <td>${estudiante.cedula}</td>
@@ -43,15 +55,11 @@ window.addEventListener("load", () => {
               </i>
             </td>
           `;
-            bodyEstudiantes.appendChild(fila);
-          });
-        })
-        .catch((error) => {
-          console.error("Error al realizar la solicitud:", error);
-        });
+        bodyEstudiantes.appendChild(fila);
+      });
     })
     .catch((error) => {
-      console.error("El servicio no está en linea:", error);
+      console.error("Error al realizar la solicitud:", error);
     });
 
 
@@ -118,6 +126,15 @@ verUsuarioModal.addEventListener("show.bs.modal", (event) => {
   imagenEstudianteModal.src = imagenEstudiante;
 });
 
+function quitarPreloader() {
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => {
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500); // Tiempo para que desaparezca (0.5s)
+  }, 1000); // Tiempo mínimo que se mostrará (1s)
+}
 
 
 
