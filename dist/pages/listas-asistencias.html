@@ -38,6 +38,7 @@
   <!-- jsvectormap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
     integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/custom-styles.css">
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -89,7 +90,7 @@
               <!--end::Menu Body-->
               <!--begin::Menu Footer-->
               <li class="user-footer">
-                <a href="../pages/examples/login-v2 copy.html" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
+                <a href="../outh/login.html" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
               </li>
               <!--end::Menu Footer-->
             </ul>
@@ -104,10 +105,19 @@
       <div class="sidebar-brand">
         <!--begin::Brand Link-->
         <a href="./index.html" class="brand-link">
-          <span class="brand-text fw-light">Lista de Asistencias</span>
+          <span class="brand-text"><b>Control</b> de asistencias</span>
           <!--end::Brand Text-->
         </a>
         <!--end::Brand Link-->
+      </div>
+      <div class="user-panel" bis_skin_checked="1">
+        <div class="pull-left image" bis_skin_checked="1">
+          <img src="../assets/img/img-andres.jpeg" class="rounded-img" alt="User Image">
+        </div>
+        <div class="pull-left info" bis_skin_checked="1">
+          <p>ANDRES CALLES</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> En línea</a>
+        </div>
       </div>
       <!--end::Sidebar Brand-->
       <!--begin::Sidebar Wrapper-->
@@ -115,6 +125,10 @@
         <nav class="mt-2">
           <!--begin::Sidebar Menu-->
           <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+            <li class="header-menu">
+              <a href="">MENU PRINCIPAL
+              </a>
+            </li>
             <li class="nav-item menu-open">
               <a href="index.html" class="nav-link active">
                 <i class="nav-icon bi bi-backpack3-fill"></i>
@@ -134,7 +148,7 @@
             <li class="nav-item menu-open">
               <a href="lista-profesores.html" class="nav-link active">
 
-                <i class="nav-icon bi bi-speedometer"></i>
+                <i class="bi bi-people-fill"></i>
                 <p>
                   Lista de Profesores
                 </p>
@@ -143,7 +157,7 @@
             <li class="nav-item menu-open">
               <a href="listas-asistencias.html" class="nav-link active">
 
-                <i class="nav-icon bi bi-speedometer"></i>
+                <i class="bi bi-list-ul"></i>
                 <p>
                   Lista de Subproyectos
                 </p>
@@ -209,7 +223,7 @@
     integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
     crossorigin="anonymous"></script>
   <!--end::Script-->
-
+  <script src="../../dist/js/adminlte.js"></script>
   <script src="../../dist/js/listas-asistencias.js"></script>
 </body>
 <!--end::Body-->

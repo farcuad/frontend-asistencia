@@ -46,3 +46,32 @@
         transform: rotate(360deg);
     }
 }
+
+.header-menu{
+    color: #4b646f;
+    background: #1a2226;
+    padding: 10px 25px 10px 15px;
+    font-size: 12px;
+    text-decoration: none;
+    
+}
+
+.rounded-img{
+    border-radius: 50%;
+    width: 50px;
+}
+
+.user-panel{
+    display: flex;
+    align-items: center;
+    background-color: #222d32;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0 0 0;
+    text-decoration: none;
+}
+
+.pull-left {
+    margin-left: 16px;
+}
