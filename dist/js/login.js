@@ -37,7 +37,14 @@ loginForm.addEventListener("submit", (e) => {
                 clearInterval(timerInterval);
             }
         }).then((result) => {
-            /* Read more about handling dismissals below */
+            //Cambiar por los datos del usuario que inicie sesión
+            //esto lo debe traer el post de login del backend
+            localStorage.setItem("usuario", JSON.stringify({ 
+                nombre: "Admin", 
+                correo: "admin@gmail.com", 
+                imagen: "../assets/img/avatar5.png"
+             }));
+
             if (result.dismiss === Swal.DismissReason.timer) {
                 window.location.href = "../pages/index.html";
             }
@@ -61,7 +68,6 @@ window.addEventListener("load", () => {
       if (!response.ok) {
         throw new Error(`Error en la solicitud: ${response.status}`);
       }
-      quitarPreloader();
       return response.text();
     })
     .then((status) => {

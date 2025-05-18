@@ -74,25 +74,25 @@
 
           <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-              <img src="../../dist/assets/img/img-andres.jpeg" class="user-image rounded-circle shadow"
+              <img id="imagenUsuario" src="../assets/img/avatar5.jpg" class="user-image rounded-circle shadow"
                 alt="User Image" />
-              <span class="d-none d-md-inline">Lindolfo Torres</span>
+              <span class="d-none d-md-inline" id="nombreUsuario">Invitado</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
               <!--begin::User Image-->
               <li class="user-header text-bg-primary">
-                <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image" />
-                <p>
-                  Linfolfo Torres
-                  <small>Asistente desde 17 de mayo de 2025 </small>
+                <img id="imagenUsuario" src="../../dist/assets/img/avatar5.png" class="rounded-circle shadow" alt="User Image" />
+                <p  id="nombreUsuario">
                 </p>
+                
+                <small id="correoUsuario"></small>
               </li>
               <!--end::User Image-->
               <!--begin::Menu Body-->
               <!--end::Menu Body-->
               <!--begin::Menu Footer-->
               <li class="user-footer">
-                <a href="../outh/login.html" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
+                <a onclick="cerrarSesion()" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
               </li>
               <!--end::Menu Footer-->
             </ul>
@@ -114,10 +114,10 @@
       </div>
       <div class="user-panel" bis_skin_checked="1">
         <div class="pull-left image" bis_skin_checked="1">
-          <img src="../assets/img/img-andres.jpeg" class="rounded-img" alt="User Image">
+          <img id="imagenUsuario" src="../assets/img/avatar5.jpg" class="rounded-img" alt="User Image" width="50" height="50" >
         </div>
         <div class="pull-left info" bis_skin_checked="1">
-          <p>ANDRES CALLES</p>
+          <p id="nombreUsuario"></p>
           <a href="#"><i class="fa fa-circle text-success"></i> En línea</a>
         </div>
       </div>
@@ -233,6 +233,7 @@
   <!--end::Script-->  
   <script src="../../dist/js/adminlte.js"></script>
   <script src="../../dist/js/lista-profesores.js"></script>
+  <script src="../../dist/js/global.js"></script>
 </body>
 <!--end::Body-->
 
