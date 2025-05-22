@@ -50,9 +50,8 @@ window.addEventListener("load", () => {
                  data-estudiante-semestre="${estudiante.semestre}"
                  data-estudiante-telefono="${estudiante.telefono}"
                  data-estudiante-correo="${estudiante.correo}"
-                 data-estudiante-imagen="${estudiante.imagen}"></i>
-              <i class="fa-solid fa-trash-can btn-eliminar" data-estudiante-cedula="${estudiante.cedula}">
-              </i>
+                 data-estudiante-imagen="${estudiante.imagen}">
+                 </i>
             </td>
           `;
         bodyEstudiantes.appendChild(fila);
@@ -61,42 +60,7 @@ window.addEventListener("load", () => {
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
     });
-
-
-
-
-  bodyEstudiantes.addEventListener("click", (event) => {
-    if (event.target.classList.contains("btn-eliminar")) {
-      const cedulaEliminar = event.target.getAttribute("data-estudiante-cedula");
-      Swal.fire({
-        title: "¿Estás seguro?",
-        text: "No podrás revertir esta acción.",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sí, eliminar",
-        cancelButtonText: "Cancelar",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Si el usuario confirma, eliminar la fila
-          eliminarFila(cedulaEliminar);
-
-          // Mostrar mensaje de éxito
-          Swal.fire("Eliminado", "El estudiante ha sido eliminado.", "success");
-        }
-      });
-    }
-  })
-});
-
-function eliminarFila(cedula) {
-  const filaEliminar = document.querySelector(`tr td .btn-eliminar[data-estudiante-cedula='${cedula}']`).closest("tr");
-  if (filaEliminar) {
-    filaEliminar.remove();
-  }
-}
-
+  });
 const verUsuarioModal = document.getElementById("verUsuarioModal");
 
 verUsuarioModal.addEventListener("show.bs.modal", (event) => {

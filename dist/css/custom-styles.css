@@ -68,10 +68,17 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
-    padding: 10px 0 0 0;
-    text-decoration: none;
+    padding: 10px 0 10px 0;
 }
 
 .pull-left {
     margin-left: 16px;
+}
+
+.sidebar-wrapper{
+    padding: 0;
+}
+
+.fa-gear{
+    color: #498ee9;
 }
