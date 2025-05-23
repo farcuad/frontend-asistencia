@@ -173,6 +173,24 @@
     <!--end::Sidebar-->
     <!--begin::App Main-->
     <main class="app-main ">
+      <div class="card m-4  text-white">
+        <div class="p-4 d-flex flex-row bg-unellez align-items-center">
+          <div>
+            <img id="imagenUsuario" src="../assets/img/avatar5.png" class="rounded-circle d-block me-4" alt="User Image"
+              width="80" height="80" />
+          </div>
+          <div>
+            <h3 id="nombreUsuario"></h3>
+            <P>Usuario: <span id="correoUsuario"></span></P>
+          </div>
+        </div>
+        <div class="card-body bg-azul bt-white">
+          <h3 class="card-title">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            Lista de estudiantes
+          </h3>
+        </div>
+      </div>
       <div class="card m-4">
         <div class="card-header">
           <h3 class="card-title">Lista de Asistencias</h3>
@@ -193,6 +211,7 @@
             <tbody id="bodyAsistencias">
             </tbody>
           </table>
+        </div>
         </div>
     </main>
 

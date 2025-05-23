@@ -15,7 +15,7 @@
     content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard" />
   <!--end::Primary Meta Tags-->
   <!--begin::Fonts-->
-    <!--begin::Favicon-->
+  <!--begin::Favicon-->
   <link rel="icon" type="image/png" href="../../dist/assets/img/logo.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
     integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous" />
@@ -40,7 +40,7 @@
   <!-- jsvectormap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
     integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../css/custom-styles.css">
+  <link rel="stylesheet" href="../css/custom-styles.css">
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -81,9 +81,10 @@
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
               <!--begin::User Image-->
               <li class="user-header text-bg-primary">
-                <img id="imagenUsuario" src="../../dist/assets/img/avatar5.png" class="rounded-circle shadow" alt="User Image" />
-                <p  id="nombreUsuario">
-                  
+                <img id="imagenUsuario" src="../../dist/assets/img/avatar5.png" class="rounded-circle shadow"
+                  alt="User Image" />
+                <p id="nombreUsuario">
+
                 </p>
                 <small id="correoUsuario"></small>
               </li>
@@ -92,7 +93,7 @@
               <!--end::Menu Body-->
               <!--begin::Menu Footer-->
               <li class="user-footer">
-                <a onclick="cerrarSesion()"  class="btn btn-default btn-flat float-end">Cerrar sesión</a>
+                <a onclick="cerrarSesion()" class="btn btn-default btn-flat float-end">Cerrar sesión</a>
               </li>
               <!--end::Menu Footer-->
             </ul>
@@ -114,7 +115,8 @@
       </div>
       <div class="user-panel" bis_skin_checked="1">
         <div class="pull-left image" bis_skin_checked="1">
-          <img id="imagenUsuario" src="../assets/img/avatar5.jpg" class="rounded-img" alt="User Image" width="50" height="50" >
+          <img id="imagenUsuario" src="../assets/img/avatar5.jpg" class="rounded-img" alt="User Image" width="50"
+            height="50">
         </div>
         <div class="pull-left info" bis_skin_checked="1">
           <p id="nombreUsuario">Invitado</p>
@@ -174,6 +176,24 @@
     <!--end::Sidebar-->
     <!--begin::App Main-->
     <main class="app-main ">
+      <div class="card m-4  text-white">
+        <div class="p-4 d-flex flex-row bg-unellez align-items-center">
+          <div>
+            <img id="imagenUsuario" src="../assets/img/avatar5.png" class="rounded-circle d-block me-4" alt="User Image"
+              width="80" height="80" />
+          </div>
+          <div>
+            <h3 id="nombreUsuario"></h3>
+            <P>Usuario: <span id="correoUsuario"></span></P>
+          </div>
+        </div>
+        <div class="card-body bg-azul bt-white">
+          <h3 class="card-title">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            Lista de estudiantes
+          </h3>
+        </div>
+      </div>
       <div class="card m-4">
         <div class="card-header">
           <h3 class="card-title">Lista de Subproyectos</h3>
@@ -191,6 +211,10 @@
             </tbody>
           </table>
         </div>
+      </div>
+      <div class="d-flex justify-content-end m-4">
+        <a target="_blank" class="btn boton-azul "><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp; Crear Subproyecto</a>
+      </div>
     </main>
 
   </div>
@@ -205,7 +229,7 @@
   <!--end::Script-->
   <script src="../../dist/js/adminlte.js"></script>
   <script src="../../dist/js/lista-subproyectos.js"></script>
-  
+
   <script src="../../dist/js/global.js"></script>
 </body>
 <!--end::Body-->

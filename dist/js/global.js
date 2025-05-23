@@ -36,3 +36,5 @@ function  cargarUsuario() {
   window.location.href = "../outh/login.html";
 
  }
+
+  
