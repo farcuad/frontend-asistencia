@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
             <td>${estudiante.nombre}</td>
             <td>${estudiante.cedula}</td>
             <td>
-              <i class="fa-solid fa-eye" data-bs-toggle="modal" 
+              <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" 
                  data-bs-target="#verUsuarioModal" 
                  data-estudiante-nombre="${estudiante.nombre}"
                  data-estudiante-cedula="${estudiante.cedula}"

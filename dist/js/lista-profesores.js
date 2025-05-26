@@ -18,16 +18,18 @@ window.addEventListener("load", () => {
                 <td>${index + 1}</td>
                 <td>${profesore.nombre}</td>
                 <td>${profesore.id}</td>
+                <td>${profesore.aprobado}</td>
                 <td>
 
-                  <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
+                  <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
                   data-profesor-nombre="${profesore.nombre}"
                   data-profesor-id="${profesore.id}"
                   data-profesor-telefono="${profesore.telefono}"
                   data-profesor-correo="${profesore.correo}"
                   data-profesor-imagen="${profesore.imagen}">
                   </i>
-                  <i class="fa-solid fa-circle-check"></i>
+                  <i class="color-green fa-solid fa-circle-check"></i>
+                  <i class="color-red fa-solid fa-circle-xmark"></i>
                 </td> `
         bodyProfesores.appendChild(fila);
       });
@@ -60,5 +62,7 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
   correoProfesorModal.textContent = correoProfesor; 
   imagenProfesorModal.src = imagenProfesor;
 
+});
 
-})
+
+
