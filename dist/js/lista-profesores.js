@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
       if (!response.ok) {
         throw new Error(`Error en la solicitud: ${response.status}`);
       }
-      return response.json(); // Convertir la respuesta a JSON
+      return response.json();
     })
     .then((data) => {
       console.log("Datos recibidos:", data); // Procesar los datos recibidos
@@ -13,25 +13,89 @@ window.addEventListener("load", () => {
       listasProfesores = data;
       const bodyProfesores = document.getElementById("bodyProfesores");
       listasProfesores.forEach((profesore, index) => {
+        const aprobarId = `aprobado-${index}`;
+        const botonAprobarId = `aprobar-${index}`;
+        const botonRechazarId = `rechazar-${index}`;
         const fila = document.createElement("tr");
         fila.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${profesore.nombre}</td>
-                <td>${profesore.id}</td>
-                <td>${profesore.aprobado}</td>
-                <td>
-
-                  <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
-                  data-profesor-nombre="${profesore.nombre}"
-                  data-profesor-id="${profesore.id}"
-                  data-profesor-telefono="${profesore.telefono}"
-                  data-profesor-correo="${profesore.correo}"
-                  data-profesor-imagen="${profesore.imagen}">
-                  </i>
-                  <i class="color-green fa-solid fa-circle-check"></i>
-                  <i class="color-red fa-solid fa-circle-xmark"></i>
-                </td> `
+          <td>${index + 1}</td>
+          <td>${profesore.nombre}</td>
+          <td>${profesore.id}</td>
+          <td id="${aprobarId}">${profesore.aprobado === true ? "Aprobado" : (profesore.aprobado === false ? "Rechazado" : "Pendiente")}</td>
+          <td>
+            <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
+              data-profesor-nombre="${profesore.nombre}"
+              data-profesor-id="${profesore.id}"
+              data-profesor-telefono="${profesore.telefono}"
+              data-profesor-correo="${profesore.correo}"
+              data-profesor-imagen="${profesore.imagen}">
+            </i>
+            <i class="color-green fa-solid fa-circle-check" id="${botonAprobarId}" style="${profesore.aprobado === true ? 'display:none;' : ''}"></i>
+            <i class="color-red fa-solid fa-circle-xmark" id="${botonRechazarId}" style="${profesore.aprobado === false ? 'display:none;' : ''}"></i>
+          </td>
+        `;
         bodyProfesores.appendChild(fila);
+
+        const botonAprobar = document.getElementById(botonAprobarId);
+        const botonRechazar = document.getElementById(botonRechazarId);
+        const aprobado = document.getElementById(aprobarId);
+
+        if (botonAprobar) {
+          botonAprobar.addEventListener("click", () => {
+            fetch("https://api-springboot-hdye.onrender.com/actualizarprofesor", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                aprobado: "Aprobado",
+                imagen: profesore.imagen,
+                id: profesore.id,
+                nombre: profesore.nombre,
+                telefono: profesore.telefono,
+                correo: profesore.correo
+              })
+            })
+            .then(response => {
+              if (!response.ok) throw new Error(`Error al actualizar`);
+              aprobado.textContent = "Aprobado";
+              if (botonAprobar) botonAprobar.style.display = "none";
+              if (botonRechazar) botonRechazar.style.display = "none";
+            })
+            .catch(error => {
+              alert("Error al actualizar el profesor");
+              console.error(error);
+            });
+          });
+        }
+        if (botonRechazar) {
+          botonRechazar.addEventListener("click", () => {
+            fetch("https://api-springboot-hdye.onrender.com/actualizarprofesor", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                aprobado: "Desaprobado",
+                imagen: profesore.imagen,
+                id: profesore.id,
+                nombre: profesore.nombre,
+                telefono: profesore.telefono,
+                correo: profesore.correo
+              })
+            })
+            .then(response => {
+              if (!response.ok) throw new Error(`Error al actualizar`);
+              aprobado.textContent = "Rechazado";
+              if (botonAprobar) botonAprobar.style.display = "none";
+              if (botonRechazar) botonRechazar.style.display = "none";
+            })
+            .catch(error => {
+              alert("Error al actualizar el profesor");
+              console.error(error);
+            });
+          });
+        }
       });
     })
     .catch((error) => {
@@ -39,6 +103,7 @@ window.addEventListener("load", () => {
     });
 });
 
+// Modal de detalle de profesor
 const verAsistencias = document.getElementById("verProfesoresModal");
 
 verAsistencias.addEventListener("show.bs.modal", (event) => {
@@ -61,7 +126,7 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
   telefonoProfesorModal.textContent = telefonoProfesor;
   correoProfesorModal.textContent = correoProfesor; 
   imagenProfesorModal.src = imagenProfesor;
-
+  
 });
 
 
