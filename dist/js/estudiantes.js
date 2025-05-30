@@ -47,10 +47,12 @@ window.addEventListener("load", () => {
                  data-estudiante-nombre="${estudiante.nombre}"
                  data-estudiante-cedula="${estudiante.cedula}"
                  data-estudiante-carrera="${estudiante.carrera}"
-                 data-estudiante-semestre="${estudiante.semestre}"
+                 data-estudiante-periodo="${estudiante.periodo}"
                  data-estudiante-telefono="${estudiante.telefono}"
                  data-estudiante-correo="${estudiante.correo}"
-                 data-estudiante-imagen="${estudiante.imagen}">
+                 data-estudiante-imagen="${estudiante.imagen}"
+                 data-estudiante-fecha="${estudiante.fechaNacimiento}"
+                 data-estudiante-estado="${estudiante.estado}">
                  </i>
             </td>
           `;
@@ -68,26 +70,32 @@ verUsuarioModal.addEventListener("show.bs.modal", (event) => {
   const nombreEstudiante = botonVer.getAttribute("data-estudiante-nombre");
   const cedulaEstudiante = botonVer.getAttribute("data-estudiante-cedula");
   const carreraEstudiante = botonVer.getAttribute("data-estudiante-carrera");
-  const semestreEstudiante = botonVer.getAttribute("data-estudiante-semestre");
+  const periodoEstudiante = botonVer.getAttribute("data-estudiante-periodo");
   const telefonoEstudiante = botonVer.getAttribute("data-estudiante-telefono");
   const correoEstudiante = botonVer.getAttribute("data-estudiante-correo");
   const imagenEstudiante = botonVer.getAttribute("data-estudiante-imagen");
+  const fechaEstudiante = botonVer.getAttribute("data-estudiante-fecha");
+  const estadoEstudiante = botonVer.getAttribute("data-estudiante-estado");
 
   const nombreEstudianteModal = document.getElementById("nombreEstudianteModal");
   const cedulaEstudianteModal = document.getElementById("cedulaEstudianteModal");
   const carreraEstudianteModal = document.getElementById("carreraEstudianteModal");
-  const semestreEstudianteModal = document.getElementById("semestreEstudianteModal");
+  const periodoEstudianteModal = document.getElementById("periodoEstudianteModal");
   const telefonoEstudianteModal = document.getElementById("telefonoEstudianteModal");
   const correoEstudianteModal = document.getElementById("correoEstudianteModal");
   const imagenEstudianteModal = document.getElementById("imagenEstudianteModal");
+  const fechaEstudianteModal = document.getElementById("fechaEstudianteModal");
+  const estadoEstudianteModal = document.getElementById("estadoEstudianteModal");
 
   nombreEstudianteModal.textContent = nombreEstudiante;
   cedulaEstudianteModal.textContent = cedulaEstudiante;
   carreraEstudianteModal.textContent = carreraEstudiante;
-  semestreEstudianteModal.textContent = semestreEstudiante;
+  periodoEstudianteModal.textContent = periodoEstudiante;
   telefonoEstudianteModal.textContent = telefonoEstudiante;
   correoEstudianteModal.textContent = correoEstudiante;
   imagenEstudianteModal.src = imagenEstudiante;
+  fechaEstudianteModal.textContent = fechaEstudiante;
+  estadoEstudianteModal.textContent = estadoEstudiante;
 });
 
 function quitarPreloader() {
