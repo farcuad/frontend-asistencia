@@ -20,12 +20,12 @@ window.addEventListener("load", () => {
         fila.innerHTML = `
           <td>${index + 1}</td>
           <td>${profesore.nombre === "Nombre no disponible" ? profesore.correo : profesore.nombre}</td>
-          <td>${profesore.id}</td>
+          <td>${profesore.ci}</td>
           <td id="${aprobarId}">${profesore.aprobado}</td>
           <td>
             <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
               data-profesor-nombre="${profesore.nombre}"
-              data-profesor-id="${profesore.id}"
+              data-profesor-cedula="${profesore.ci}"
               data-profesor-telefono="${profesore.telefono}"
               data-profesor-correo="${profesore.correo}"
               data-profesor-imagen="${profesore.imagen}">
@@ -53,7 +53,8 @@ window.addEventListener("load", () => {
                 id: profesore.id,
                 nombre: profesore.nombre,
                 telefono: profesore.telefono,
-                correo: profesore.correo
+                correo: profesore.correo,
+                ci: profesore.ci
               })
             })
             .then(response => {
@@ -81,7 +82,8 @@ window.addEventListener("load", () => {
                 id: profesore.id,
                 nombre: profesore.nombre,
                 telefono: profesore.telefono,
-                correo: profesore.correo
+                correo: profesore.correo,
+                ci: profesore.ci
               })
             })
             .then(response => {
@@ -110,19 +112,19 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
   const btnVer = event.relatedTarget;
 
   const nombreProfesor = btnVer.getAttribute("data-profesor-nombre");
-  const idProfesor = btnVer.getAttribute("data-profesor-id");
+  const cedulaProfesor = btnVer.getAttribute("data-profesor-cedula");
   const telefonoProfesor = btnVer.getAttribute("data-profesor-telefono");
   const correoProfesor = btnVer.getAttribute("data-profesor-correo");
   const imagenProfesor = btnVer.getAttribute("data-profesor-imagen");
 
   const nombreProfesorModal = document.getElementById("nombreProfesorModal");
-  const idProfesorModal = document.getElementById("idProfesorModal");
+  const cedulaProfesorModal = document.getElementById("cedulaProfesorModal");
   const telefonoProfesorModal = document.getElementById("telefonoProfesorModal");
   const correoProfesorModal = document.getElementById("correoProfesorModal");
   const imagenProfesorModal = document.getElementById("imagenProfesorModal");
 
   nombreProfesorModal.textContent = nombreProfesor;
-  idProfesorModal.textContent = idProfesor;
+  cedulaProfesorModal.textContent = cedulaProfesor;
   telefonoProfesorModal.textContent = telefonoProfesor;
   correoProfesorModal.textContent = correoProfesor; 
   imagenProfesorModal.src = imagenProfesor;
