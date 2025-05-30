@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
       contador++;
       imprimirAsistencia(contador);
     });
-  fetch("https://api-springboot-hdye.onrender.com/profesores")
+  fetch("https://api-springboot-hdye.onrender.com/leerprofesores")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Error en la solicitud: ${response.status}`);

@@ -1,6 +1,6 @@
 let listasProfesores = [];
 window.addEventListener("load", () => {
-  fetch("https://api-springboot-hdye.onrender.com/profesores")
+  fetch("https://api-springboot-hdye.onrender.com/leerprofesores")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Error en la solicitud: ${response.status}`);
@@ -19,9 +19,9 @@ window.addEventListener("load", () => {
         const fila = document.createElement("tr");
         fila.innerHTML = `
           <td>${index + 1}</td>
-          <td>${profesore.nombre}</td>
+          <td>${profesore.nombre === "Nombre no disponible" ? profesore.correo : profesore.nombre}</td>
           <td>${profesore.id}</td>
-          <td id="${aprobarId}">${profesore.aprobado === true ? "Aprobado" : (profesore.aprobado === false ? "Rechazado" : "Pendiente")}</td>
+          <td id="${aprobarId}">${profesore.aprobado}</td>
           <td>
             <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verProfesoresModal"
               data-profesor-nombre="${profesore.nombre}"
@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
                 "Content-Type": "application/json"
               },
               body: JSON.stringify({
-                aprobado: "Aprobado",
+                aprobado: "aprobado",
                 imagen: profesore.imagen,
                 id: profesore.id,
                 nombre: profesore.nombre,
@@ -58,7 +58,7 @@ window.addEventListener("load", () => {
             })
             .then(response => {
               if (!response.ok) throw new Error(`Error al actualizar`);
-              aprobado.textContent = "Aprobado";
+              aprobado.textContent = "aprobado";
               if (botonAprobar) botonAprobar.style.display = "none";
               if (botonRechazar) botonRechazar.style.display = "none";
             })
@@ -76,7 +76,7 @@ window.addEventListener("load", () => {
                 "Content-Type": "application/json"
               },
               body: JSON.stringify({
-                aprobado: "Desaprobado",
+                aprobado: "rechazado",
                 imagen: profesore.imagen,
                 id: profesore.id,
                 nombre: profesore.nombre,
@@ -86,7 +86,7 @@ window.addEventListener("load", () => {
             })
             .then(response => {
               if (!response.ok) throw new Error(`Error al actualizar`);
-              aprobado.textContent = "Rechazado";
+              aprobado.textContent = "rechazado";
               if (botonAprobar) botonAprobar.style.display = "none";
               if (botonRechazar) botonRechazar.style.display = "none";
             })
@@ -128,6 +128,3 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
   imagenProfesorModal.src = imagenProfesor;
   
 });
-
-
-

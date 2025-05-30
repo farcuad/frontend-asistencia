@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
                 <td>${subproyecto.nombre}</td>
                 <td>
                   <i class="color-blue fa-solid fa-pen" data-bs-toggle="modal"
-                   data-bs-target="#actualizarProfesor"data-id="${subproyecto.id}"
+                   data-bs-target="#actualizarSubproyecto"data-id="${subproyecto.id}"
                    data-nombre="${subproyecto.nombre}"
                   data-profesor="${subproyecto.profesor}"
                   ></i>
@@ -40,7 +40,7 @@ const guardarProfesor = document.getElementById("guardarProfesor");
 guardarProfesor.addEventListener("show.bs.modal", () => {
   const seleccionar = document.getElementById("seleccionarProfesor");
   seleccionar.innerHTML = '<option value="">Seleccione un profesor</option>';
-  fetch("https://api-springboot-hdye.onrender.com/profesores")
+  fetch("https://api-springboot-hdye.onrender.com/leerprofesores")
     .then(response => response.json())
     .then(data => {
       data.forEach(profesor => {
@@ -86,14 +86,14 @@ guardarSubproyecto.addEventListener("click", () => {
 });
 
 
-const actualizarProfesor = document.getElementById("actualizarProfesor");
+const actualizarSubproyecto = document.getElementById("actualizarSubproyecto");
 let   subproyectoIdActualizar = "";
-actualizarProfesor.addEventListener("show.bs.modal", (event) => {
+actualizarSubproyecto.addEventListener("show.bs.modal", (event) => {
   const btn = event.relatedTarget;
   subproyectoIdActualizar = btn.getAttribute("data-id");
   const seleccionarSubproyecto = document.getElementById("seleccionarSubproyecto");
   seleccionarSubproyecto.innerHTML = '<option value="">Seleccione un profesor</option>';
-  fetch("https://api-springboot-hdye.onrender.com/profesores")
+  fetch("https://api-springboot-hdye.onrender.com/leerprofesores")
     .then(response => response.json())
     .then(data => {
       data.forEach(profesor => {
@@ -105,9 +105,9 @@ actualizarProfesor.addEventListener("show.bs.modal", (event) => {
     });
 })
 
-const actualizarSubproyecto = document.getElementById("actualizarSubproyecto");
+const actualizarSubproyectos = document.getElementById("actualizarSubproyectos");
 
-actualizarSubproyecto.addEventListener("click", () => {
+actualizarSubproyectos.addEventListener("click", () => {
   const nombreSubproyecto = document.getElementById("nameSubproyecto").value;
   const subproyectoId = document.getElementById("seleccionarSubproyecto").value;
 
