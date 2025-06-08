@@ -46,17 +46,32 @@ guardarProfesor.addEventListener("show.bs.modal", () => {
       data.forEach(profesor => {
         const option = document.createElement('option');
         option.value = profesor.id;
-        option.textContent = profesor.nombre;
+        option.textContent = "Nombre no disponible" ? profesor.correo : profesor.nombre;
         seleccionar.appendChild(option);
       });
     });
+
+  const seleccionarCarrera = document.getElementById("seleccionarCarrera");
+  seleccionarCarrera.innerHTML = '<option value="">Seleccione una carrera</option>';
+  fetch("https://api-springboot-hdye.onrender.com/carreras")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(carrera => {
+        const option = document.createElement('option');
+        option.value = carrera.id;
+        option.textContent = carrera.nombre;
+        seleccionarCarrera.appendChild(option);
+      });
+    });
 })
+
 
 const guardarSubproyecto = document.getElementById("guardarSubproyecto");
 
 guardarSubproyecto.addEventListener("click", () => {
   const nombre = document.getElementById("nombreSubproyecto").value;
   const profesorId = document.getElementById("seleccionarProfesor").value;
+  const carrera = document.getElementById("seleccionarCarrera").value;
 
   fetch("https://api-springboot-hdye.onrender.com/crearsubproyecto", {
     method: "POST",
@@ -66,7 +81,8 @@ guardarSubproyecto.addEventListener("click", () => {
     body: JSON.stringify({
       nombre: nombre,
       profesor: profesorId.toString(),
-      id: ""
+      id: "",
+      carrera: carrera
     })
   })
     .then(response => {
@@ -87,10 +103,13 @@ guardarSubproyecto.addEventListener("click", () => {
 
 
 const actualizarSubproyecto = document.getElementById("actualizarSubproyecto");
-let   subproyectoIdActualizar = "";
+let subproyectoIdActualizar = "";
 actualizarSubproyecto.addEventListener("show.bs.modal", (event) => {
   const btn = event.relatedTarget;
   subproyectoIdActualizar = btn.getAttribute("data-id");
+  const nombreSubproyecto = btn.getAttribute("data-nombre");
+  document.getElementById("nameSubproyecto").value = nombreSubproyecto;
+
   const seleccionarSubproyecto = document.getElementById("seleccionarSubproyecto");
   seleccionarSubproyecto.innerHTML = '<option value="">Seleccione un profesor</option>';
   fetch("https://api-springboot-hdye.onrender.com/leerprofesores")
@@ -99,8 +118,22 @@ actualizarSubproyecto.addEventListener("show.bs.modal", (event) => {
       data.forEach(profesor => {
         const option = document.createElement('option');
         option.value = profesor.id;
-        option.textContent = profesor.nombre;
+        option.textContent = "Nombre no disponible" ? profesor.correo : profesor.nombre;
         seleccionarSubproyecto.appendChild(option);
+      });
+    });
+
+  // Cargar las carreras disponibles
+  const actualizarCarrera = document.getElementById("actualizarCarrera");
+  actualizarCarrera.innerHTML = '<option value="">Seleccione una carrera</option>';
+  fetch("https://api-springboot-hdye.onrender.com/carreras")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(carrera => {
+        const option = document.createElement('option');
+        option.value = carrera.id;
+        option.textContent = carrera.nombre;
+        actualizarCarrera.appendChild(option);
       });
     });
 })
@@ -110,6 +143,7 @@ const actualizarSubproyectos = document.getElementById("actualizarSubproyectos")
 actualizarSubproyectos.addEventListener("click", () => {
   const nombreSubproyecto = document.getElementById("nameSubproyecto").value;
   const subproyectoId = document.getElementById("seleccionarSubproyecto").value;
+  const actualizarCarrera = document.getElementById("actualizarCarrera").value;
 
   fetch("https://api-springboot-hdye.onrender.com/actualizarsubproyecto", {
     method: "POST",
@@ -119,7 +153,8 @@ actualizarSubproyectos.addEventListener("click", () => {
     body: JSON.stringify({
       nombre: nombreSubproyecto,
       profesor: subproyectoId,
-      id: subproyectoIdActualizar
+      id: subproyectoIdActualizar,
+      carrera: actualizarCarrera
     })
   })
     .then(response => {

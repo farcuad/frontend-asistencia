@@ -130,16 +130,32 @@
           <!--begin::Sidebar Menu-->
           <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
             <li class="header-menu">
-              <a href="" class="text-decoration-none">MENU PRINCIPAL
+              <a href="../pages/index.html" class="text-decoration-none">MENU PRINCIPAL
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="../pages/index.html" class="nav-link active">
+              <a href="#" class="nav-link active">
                 <i class="nav-icon bi bi-backpack3-fill"></i>
                 <p>
                   Estudiantes
+                  <i class="nav-arrow bi bi-chevron-right"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="lista-estudiantes.html" class="nav-link active">
+                    <i class="bi bi-person-fill"></i>
+                    <p>Ingenierida Infórmatica</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="bi bi-person-fill"></i>
+                    <p>Ingenieria en Producción animal</p>
+                  </a>
+                </li>
+
+              </ul>
             </li>
             <li class="nav-item menu-open">
               <a href="../pages/listas-asistencias.html" class="nav-link active">
@@ -214,8 +230,8 @@
         </div>
       </div>
       <div class="d-flex justify-content-end m-4">
-        <a id="button" target="_blank" class="btn boton-azul " data-bs-toggle="modal" data-bs-target="#guardarProfesor"><i
-            class="fa fa-plus"></i> Crear
+        <a id="button" target="_blank" class="btn boton-azul " data-bs-toggle="modal"
+          data-bs-target="#guardarProfesor"><i class="fa fa-plus"></i> Crear
           Subproyecto</a>
       </div>
     </main>
@@ -235,7 +251,14 @@
                 <input type="text" class="form-control" id="nombreSubproyecto" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nombre del Profesor</label>
                 <select class="form-select" id="seleccionarProfesor">
+                  <!-- Las opciones se llenarán dinámicamente con JS -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Carrera</label>
+                <select class="form-select" id="seleccionarCarrera">
                   <!-- Las opciones se llenarán dinámicamente con JS -->
                 </select>
               </div>
@@ -251,34 +274,41 @@
   </div>
 
   <!-- Modal de actualizar Subproyectos -->
-    <div class="modal fade" id="actualizarSubproyecto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Subproyecto</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre del Subproyecto</label>
-                <input type="text" class="form-control" id="nameSubproyecto" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre del Profesor</label>
-                <select class="form-select" id="seleccionarSubproyecto">
-                  <!-- Las opciones se llenarán dinámicamente con JS -->
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button id="actualizarSubproyectos" type="button" class="btn btn-primary">Actualizar Subproyecto</button>
-          </div>
+  <div class="modal fade" id="actualizarSubproyecto" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Subproyecto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre del Subproyecto</label>
+              <input type="text" class="form-control" id="nameSubproyecto" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre del Profesor</label>
+              <select class="form-select" id="seleccionarSubproyecto">
+                <!-- Las opciones se llenarán dinámicamente con JS -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Carrera</label>
+              <select class="form-select" id="actualizarCarrera">
+                <!-- Las opciones se llenarán dinámicamente con JS -->
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button id="actualizarSubproyectos" type="button" class="btn btn-primary">Actualizar Subproyecto</button>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 

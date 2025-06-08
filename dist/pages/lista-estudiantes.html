@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Lista de estudiantes</title>
+  <title>Ingeniería Infórmatica</title>
   <!--begin::Primary Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="AdminLTE v4 | Dashboard" />
@@ -145,7 +145,7 @@
                   Estudiantes
                   <i class="nav-arrow bi bi-chevron-right"></i>
                 </p>
-              </a>
+              </a> 
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="lista-estudiantes.html" class="nav-link active">
@@ -154,7 +154,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="produccion-animal.html" class="nav-link">
                     <i class="bi bi-person-fill"></i>
                     <p>Ingenieria en Producción animal</p>
                   </a>
@@ -212,8 +212,28 @@
         <div class="card-body bg-azul bt-white">
           <h3 class="card-title">
             <i class="fa fa-cogs" aria-hidden="true"></i>
-            Menú Principal
+            Lista de estudiantes
           </h3>
+        </div>
+      </div>
+      <div class="card m-4">
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Nombre y Apellido</th>
+                <th>Cedula</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="bodyEstudiantes">
+              <!-- Se crean las filas dinamicamente -->
+              </tr>
+            </tbody>
+          </table>
+
         </div>
       </div>
 

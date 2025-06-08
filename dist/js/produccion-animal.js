@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
       console.log("Datos recibidos:", data); // Procesar los datos recibidos
       // Aquí puedes manipular los datos, por ejemplo, mostrarlos en una tabla
       // Preguntar el parametro del url y si es una carrera u otra
-      let carrera = "Ingenieria Informatica"
+      let carrera = "Ingenieria Produccion Animal"
       let nuevoEstudiante = []
       data.forEach((e) =>{
         if ( e.carrera === carrera ) {
