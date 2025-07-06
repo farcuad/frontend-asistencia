@@ -58,11 +58,15 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
       justificativosContainer.innerHTML = "<p>No hay justificativos para este profesor.</p>";
     }else{
       justificativosContainer.innerHTML= justificativos.map(justificativo => `
-        <div class="justificativo">
-        <strong>Fecha:</strong> ${justificativo.fecha}<br>
+        <div class="justificativo d-flex align-items-center mb-3" style="gap: 20px;">
+        <div class="flex-grow-1">
+        <strong ">Fecha:</strong> ${justificativo.fecha}<br>
         <strong>Descripcion:</strong> ${justificativo.descripcion}<br>
         <strong>Profesor:</strong> ${justificativo.profesor}<br>
-        <img src="${justificativo.imageUrl}" alt="Justificativo" class="img-fluid rounded" width="100">
+        </div>
+        <div>
+        <img src="${justificativo.imageUrl}" alt="Justificativo" class="img-fluid rounded" width="450" height="225">
+        </div>
         </div>
         `).join("");
     }
