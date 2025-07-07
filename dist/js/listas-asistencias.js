@@ -50,11 +50,26 @@ const verAsistencias = document.getElementById("verAsistenciaModal");
 
 verAsistencias.addEventListener("show.bs.modal", (event) => {
   const btnVer = event.relatedTarget;
-
+  const imagenAsistencia = btnVer.getAttribute("data-imagen-asistencia");
   const estudiantes = JSON.parse(btnVer.getAttribute("data-estudiantes"));
+  const descripcion = btnVer.getAttribute("data-descripcion");
 
   const estudianteModal = document.getElementById("estudiantes");
   estudianteModal.textContent = "";
+
+  const imagenModal = document.getElementById("imagenAsistencia");
+  if(imagenModal){
+    let html = ""
+    if(descripcion){
+      html += `<p><strong>Descripción:</strong>${descripcion}</p>`;
+    }
+    if(imagenAsistencia){
+      html += `<img src="${imagenAsistencia}" alt="Imagen de asistencia" class="img-fluid">`;
+    }else{
+      html += `<p>No hay imagen de asistencia disponible.</p>`;
+    }
+    imagenModal.innerHTML = html;
+  }
   fetch("https://api-springboot-hdye.onrender.com/buscarestudiantes", {
     method: "POST",
     headers: {
@@ -83,6 +98,7 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
                 <td>${index + 1}</td>
                 <td>${estudiante.cedula}</td>
                 <td>${estudiante.nombre}</td>
+
                 `
         estudianteModal.appendChild(fila);
       })
@@ -111,9 +127,9 @@ function imprimirAsistencia(n) {
                 <td>
 
                   <i class="color-blue fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#verAsistenciaModal"
-                  data-estudiantes=${JSON.stringify(asistencia.estudiantes)}
-
-                  ></i>
+                  data-estudiantes= '${JSON.stringify(asistencia.estudiantes)}'
+                  data-imagen-asistencia="${asistencia.imageUrl || ''}"
+                  data-descripcion="${asistencia.descripcion || ''}"></i>
                 </td> `
       bodyAsistencias.appendChild(fila);
     })
