@@ -81,3 +81,11 @@
 .color-blue:hover{
   color: #367fa9;
 }
+
+.medio{
+  margin-top: 40%;
+}
+
+.btn-warning{
+  padding: 16px;
+}

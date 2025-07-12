@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   cargarUsuario();
 });
 
-function  cargarUsuario() {
+function cargarUsuario() {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   const nombreUsuario = document.querySelectorAll("#nombreUsuario");
   const imagenUsuario = document.querySelectorAll("#imagenUsuario");
@@ -29,12 +29,17 @@ function  cargarUsuario() {
       element.src = "../assets/img/avatar5.png";
     });
   }
- }
+}
 
- function cerrarSesion() {
+function cerrarSesion() {
   localStorage.removeItem("usuario");
   window.location.href = "../outh/login.html";
 
- }
+}
 
-  
+
+const justificativos = document.getElementById("justificativos");
+
+justificativos.addEventListener("click", () => {
+  window.location.href = "justificativos.html";
+})

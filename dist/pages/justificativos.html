@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Lista de Profesores </title>
+  <title>Justificativos </title>
   <!--begin::Primary Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="AdminLTE v4 | Dashboard" />
@@ -153,6 +153,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="produccion-animal.html" class="nav-link">
+                    <i class="bi bi-person-fill"></i>
+                    <p>Ingenieria en Producción animal</p>
+                  </a>
+                </li>
+                 <li class="nav-item">
                   <a href="administración.html" class="nav-link">
                     <i class="bi bi-person-fill"></i>
                     <p>Licenciatura en Administración</p>
@@ -176,7 +182,6 @@
                     <p>Derecho</p>
                   </a>
                 </li>
-
               </ul>
             </li>
             <li class="nav-item menu-open">
@@ -231,8 +236,8 @@
         <div class="card-body bg-azul bt-white">
           <h3 class="card-title">
             <i class="fa fa-cogs" aria-hidden="true"></i>
-            Lista de estudiantes
-          </h3>
+            Justificativos de los profesores
+            </h3>
         </div>
       </div>
       <div class="card m-4">
@@ -247,8 +252,7 @@
                 <th style="width: 10px">#</th>
                 <th>Nombre y Apellido</th>
                 <th>Cedulas</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th>Justificativos</th>
               </tr>
             </thead>
             <tbody id="bodyProfesores">
@@ -260,23 +264,16 @@
 
   </div>
 
-  <div class="modal fade" id="verProfesoresModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel"
+  <div class="modal fade" id="verJustificativosModal" tabindex="-1" aria-labelledby="verUsuarioModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="verUsuarioModalLabel">Datos del usuario</h1>
+          <h1 class="modal-title fs-5" id="verUsuarioModalLabel">Justificativo</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div class="texte-center">
-            <img src="" id="imagenProfesorModal" class=" rounded" width="100">
-          </div>
-          <p>Nombre: <span id="nombreProfesorModal"></span></p>
-          <p>Cedula: <span id="cedulaProfesorModal"></span></p>
-          <p>Correo: <span id="correoProfesorModal"></span></p>
-          <p>Telefono: <span id="telefonoProfesorModal"></span></p>
-        </div>
+        <div id="justificativosContainer" class="modal-body">
+          
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Listo</button>
         </div>
@@ -295,7 +292,7 @@
     crossorigin="anonymous"></script>
   <!--end::Script-->  
   <script src="../../dist/js/adminlte.js"></script>
-  <script src="../../dist/js/lista-profesores.js"></script>
+  <script src="../../dist/js/justificativos.js"></script>
   <script src="../../dist/js/global.js"></script>
 </body>
 <!--end::Body-->
