@@ -49,9 +49,6 @@ verAsistencias.addEventListener("show.bs.modal", (event) => {
     return response.json();
   })
   .then((data) => {
-    console.log("Datos recibidos:", data); // Procesar los datos recibidos
-    console.log("Profesor ID:", profesorId); // Verificar el ID del profesor
-    console.log("Justificativos profesores:", data.map(j => j.profesor)); // Verificar los IDs de los profesores en los justificativos
     const justificativos = data.filter(justificativo => String(justificativo.profesor) === String(profesorId));
 
     if (justificativos.length === 0) {
